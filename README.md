@@ -1,8 +1,10 @@
-# catclub-demo
+# catclubdemo
 
-Text a color to a Twilio number and see the page update live.
+Text a color to a Twilio number and see the page update live!
 
 https://catclub-demo.glitch.me
+
+This project was originally made by @lachlanjc, and I loved it so much that I remixed it on Glitch, enhanced it a slight bit, and repurposed it for my club. Most of the code in this repository is not mine! [Click here to see the original Glitch project](https://glitch.com/edit/#!/schacks-demo).
 
 ## Make your own
 
