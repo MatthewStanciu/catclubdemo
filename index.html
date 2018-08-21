@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAT Club Demo</title>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#ff4949">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      color: #fff;
+      font-family: SFMono-Regular, Menlo, monospace;
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 0;
+      transition: background-color 1s;
+    }
+
+    header {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      margin-right: 1rem;
+    }
+    header span {
+      margin-right: 3rem;
+    }
+
+    h1 {
+      font-size: 10rem;
+      margin: 0 !important;
+      line-height: 1;
+      width: 100%;
+      position: absolute;
+      bottom: calc(50vh - 5rem);
+    }
+
+    footer {
+      font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', 'Helvetica Neue', Roboto, 'Segoe UI', sans-serif;
+      background-color: rgba(0,0,0,.25);
+      width: 100%;
+      font-size: 4rem;
+      padding: 1rem;
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="logo">
+    <header>
+      <a target="_blank" href="https://wlcat.club"><img src="https://cdn.glitch.com/79ac2e94-b1ac-4f43-8bc2-e9b55f1b6d02%2FroundLogo.png?1534805204718" width="72" height="72"></a>
+      <span><strong>CAT Club</strong></span>
+    </header>
+  </div>
+  <h1>#ffffff</h1>
+  <footer>Text a color to <strong>(765) 295-7250</strong></footer>
+
+  <script>
+  function update() {
+  $.get('/color', data => {
+    var colorPossibilities = [ "black", "blue", "cyan", "green", "teal", "turquoise", "indigo", "gray", "purple", "brown", "tan", "violet", "beige", "fuchsia", "gold", "magenta", "orange", "pink", "red", "white", "yellow" ];
+    var cols = colorPossibilities.toString().toLowerCase();
+    var colors = {
+      black: '#000000',
+      blue: '#0000FF',
+      cyan: '#00FFFF',
+      green: '#008000',
+      teal: '#008080',
+      turquoise: '#40E0D0',
+      indigo: '#4B0082',
+      gray: '#808080',
+      purple: '#800080',
+      brown: '#A52A2A',
+      tan: '#D2B48C',
+      violet: '#EE82EE',
+      beige: '#F5F5DC',
+      fuchsia: '#FF00FF',
+      gold: '#FFD700',
+      magenta: '#FF00FF',
+      orange: '#FFA500',
+      pink: '#FFC0CB',
+      red: '#FF4949',
+      white: '#FFFFFF',
+      yellow: '#FFFF00'
+    }
+    var color = colors[data.trim().toLowerCase() || 'reset']
+    document.body.style.backgroundColor = color
+    
+    if (cols.includes(data.toLowerCase())) $('h1').text(data.toLowerCase());
+    showCATClubLogo();
+  })
+}
+setInterval(update, 1000)
+update()
+    
+function showCATClubLogo() {
+  var logo = document.getElementById("logo");
+  if ($('h1').text() === "white" || $('h1').text() === "#ffffff") logo.style.display = "none";
+  else logo.style.display = "block";
+}
+</script>
+</body>
+</html>

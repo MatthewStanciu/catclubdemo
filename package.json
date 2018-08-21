@@ -1,0 +1,16 @@
+{
+  "name": "catclub-demo",
+  "version": "1.0.0",
+  "description": "Demo for CAT Club",
+  "main": "server.js",
+  "author": "Matthew Stanciu",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0-alpha.2",
+    "body-parser": "^1.17.2"
+  },
+  "license": "MIT"
+}
